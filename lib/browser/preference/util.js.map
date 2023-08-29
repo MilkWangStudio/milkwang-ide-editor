@@ -1,0 +1,1 @@
+{"version":3,"file":"util.js","sourceRoot":"","sources":["../../../src/browser/preference/util.ts"],"names":[],"mappings":";;;AAAA,iEAAsF;AAEtF,qCAAqE;AAErE,SAAgB,2BAA2B,CACzC,iBAAoC,EACpC,WAAmB,EACnB,kBAA0B;IAE1B,OAAO,IAAA,wCAAqB,EAAC,iBAAiB,EAAE,+BAAsB,EAAE;QACtE,WAAW;QACX,kBAAkB;KACnB,CAAC,CAAC;AACL,CAAC;AATD,kEASC"}

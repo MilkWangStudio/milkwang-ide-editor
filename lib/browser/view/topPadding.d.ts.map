@@ -1,0 +1,1 @@
+{"version":3,"file":"topPadding.d.ts","sourceRoot":"","sources":["../../../src/browser/view/topPadding.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,OAAO,EAAE,MAAM,cAAc,CAAC;AACvC,OAAO,EAAE,0BAA0B,EAAE,MAAM,UAAU,CAAC;AAEtD,qBAAa,4BAA6B,YAAW,0BAA0B;IAC7E,UAAU,CAAC,MAAM,EAAE,OAAO;CAW3B"}

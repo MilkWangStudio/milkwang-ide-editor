@@ -1,0 +1,63 @@
+import { Injector } from '@opensumi/di';
+import { IClientApp, ClientAppContribution, KeybindingContribution, KeybindingRegistry, CommandContribution, CommandRegistry, URI, MonacoContribution, CommandService, PreferenceService, IPreferenceSettingsService, OpenerContribution, IOpenerService, QuickOpenContribution, IQuickOpenHandlerRegistry, MonacoOverrideServiceRegistry } from '@opensumi/ide-core-browser';
+import { ComponentContribution, ComponentRegistry } from '@opensumi/ide-core-browser/lib/layout';
+import { MenuContribution, IMenuRegistry } from '@opensumi/ide-core-browser/lib/menu/next';
+import { IEditorDocumentModelService } from './doc-model/types';
+import { IEditorDocumentModelContentRegistry } from './doc-model/types';
+import { BrowserEditorContribution, IEditorFeatureRegistry } from './types';
+export declare class EditorContribution implements CommandContribution, ClientAppContribution, KeybindingContribution, MonacoContribution, ComponentContribution, MenuContribution, OpenerContribution, QuickOpenContribution {
+    injector: Injector;
+    private readonly appConfig;
+    private workbenchEditorService;
+    private editorStatusBarService;
+    private quickPickService;
+    private languagesService;
+    private editorDocumentModelService;
+    private cacheProvider;
+    private historyService;
+    private monacoService;
+    private readonly openerService;
+    private readonly logger;
+    private editorOpener;
+    private readonly clipboardService;
+    private readonly workspaceSymbolQuickOpenHandler;
+    private readonly prefixQuickOpenService;
+    private readonly goToLineQuickOpenHandler;
+    private readonly preferenceService;
+    private readonly textmateService;
+    private readonly corePreferences;
+    private readonly mergeEditorService;
+    contentRegistry: IEditorDocumentModelContentRegistry;
+    registerComponent(registry: ComponentRegistry): void;
+    registerOverrideService(registry: MonacoOverrideServiceRegistry): void;
+    private readonly contextMenuService;
+    private readonly globalContextKeyService;
+    private readonly contextMenuRenderer;
+    private readonly electronMainUIService;
+    registerMonacoDefaultFormattingSelector(register: any): void;
+    registerEditorExtensionContribution(register: any): void;
+    protected getMimeForMode(langId: string): string | undefined;
+    registerPlatformLanguageAssociations(register: any): void;
+    protected interceptOpen(uri: URI): Promise<boolean>;
+    onWillStop(app: IClientApp): boolean | undefined;
+    private extractGroupAndUriFromArgs;
+    private isElectronRenderer;
+    registerKeybindings(keybindings: KeybindingRegistry): void;
+    initialize(): void;
+    registerCommands(commands: CommandRegistry): void;
+    registerMenus(menus: IMenuRegistry): void;
+    registerOpener(regisry: IOpenerService): void;
+    registerQuickOpenHandlers(handlers: IQuickOpenHandlerRegistry): void;
+}
+export declare class EditorAutoSaveEditorContribution implements BrowserEditorContribution, CommandContribution {
+    injector: Injector;
+    preferenceService: PreferenceService;
+    private workbenchEditorService;
+    commandService: CommandService;
+    editorDocumentService: IEditorDocumentModelService;
+    preferenceSettings: IPreferenceSettingsService;
+    registerEditorFeature(registry: IEditorFeatureRegistry): void;
+    registerAutoSaveConfigurationChange(): void;
+    registerCommands(commands: CommandRegistry): void;
+}
+//# sourceMappingURL=editor.contribution.d.ts.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"format.service.d.ts","sourceRoot":"","sources":["../../../src/browser/format/format.service.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAyC,MAAM,cAAc,CAAC;AAmB/E,qBACa,qBAAqB;IAEhC,OAAO,CAAC,QAAQ,CAAC,MAAM,CAAU;IAGjC,OAAO,CAAC,sBAAsB,CAA6B;IAG3D,QAAQ,EAAE,QAAQ,CAAC;IAEb,kBAAkB;IA4BlB,mBAAmB;CAoC1B"}

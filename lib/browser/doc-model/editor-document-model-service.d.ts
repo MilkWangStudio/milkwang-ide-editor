@@ -1,0 +1,40 @@
+import { Injector } from '@opensumi/di';
+import { URI, IRef, IEditorDocumentChange, IEditorDocumentModelSaveResult, WithEventBus, StorageProvider, ILogger, PreferenceService } from '@opensumi/ide-core-browser';
+import { EOL } from '@opensumi/ide-monaco/lib/browser/monaco-api/types';
+import { EditorDocumentModel } from './editor-document-model';
+import { IEditorDocumentModel, IEditorDocumentModelContentRegistry, IEditorDocumentModelService, EditorDocumentModelOptionExternalUpdatedEvent, IPreferredModelOptions } from './types';
+export declare const EDITOR_DOCUMENT_MODEL_STORAGE: URI;
+export declare const EDITOR_DOC_OPTIONS_PREF_KEY = "editor_doc_pref";
+export declare class EditorDocumentModelServiceImpl extends WithEventBus implements IEditorDocumentModelService {
+    contentRegistry: IEditorDocumentModelContentRegistry;
+    injector: Injector;
+    getStorage: StorageProvider;
+    logger: ILogger;
+    preferenceService: PreferenceService;
+    private readonly hashCalculateService;
+    private storage;
+    private editorDocModels;
+    private creatingEditorModels;
+    private _modelReferenceManager;
+    private _modelsToDispose;
+    private preferredModelOptions;
+    private _ready;
+    constructor();
+    private _delete;
+    private _doDelete;
+    changeModelOptions(uri: URI, options: IPreferredModelOptions): Promise<any>;
+    persistOptionsPreference(): Promise<void>;
+    initialize(): Promise<void>;
+    acceptExternalChange(e: EditorDocumentModelOptionExternalUpdatedEvent): Promise<void>;
+    createModelReference(uri: URI, reason?: string | undefined): Promise<IRef<IEditorDocumentModel>>;
+    getModelReference(uri: URI, reason?: string | undefined): IRef<IEditorDocumentModel> | null;
+    getAllModels(): IEditorDocumentModel[];
+    hasLanguage(langaugeId: any): boolean;
+    getOrCreateModel(uri: string, encoding?: string): Promise<EditorDocumentModel>;
+    private get onceReady();
+    private createModel;
+    private doCreateModel;
+    saveEditorDocumentModel(uri: URI, content: string, baseContent: string, changes: IEditorDocumentChange[], encoding?: string, ignoreDiff?: boolean, eol?: EOL): Promise<IEditorDocumentModelSaveResult>;
+    dispose(): void;
+}
+//# sourceMappingURL=editor-document-model-service.d.ts.map
